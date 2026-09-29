@@ -29,8 +29,33 @@ for word in urgency_words:
 for word in credential_words:
     if word in message_lower:
         credential_found.append(word)
+        link_words = [
+    "http://",
+    "https://",
+    "bit.ly/",
+    "tinyurl.com"
+]
+
+link_found = []
+
+for word in link_words:
+    if word in message_lower:
+        link_found.append(word)
 
 print("\n--- CyberSakhi Analysis ---")
+
+link_words = [
+    "http://",
+    "https://",
+    "bit.ly/",
+    "tinyurl.com"
+]
+
+link_found = []
+
+for word in link_words:
+    if word in message_lower:
+        link_found.append(word)
 
 if found_words:
     print("⚠️ Urgency detected!")
@@ -43,3 +68,8 @@ if credential_found:
     print("Evidence:", credential_found)
 else:
     print("✅ No credential request detected.")
+if link_found:
+    print("🔗 Link detected!")
+    print("Evidence:", link_found)
+else:
+    print("✅ No link detected.")
